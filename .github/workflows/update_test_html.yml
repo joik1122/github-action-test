@@ -28,9 +28,11 @@ jobs:
       - name: Commit updated index.html
         uses: EndBug/add-and-commit@v7
         with:
-          author_name: James # 사용자 이름
-          author_email: joik1122@gmail.com # 사용자 이메일
-          message: Update index.html with current time # 커밋 메시지
-          add: "index.html" # 변경된 파일 추가
+          author_name: James
+          author_email: joik1122@gmail.com
+          message: Update index.html with current time
+          add: "index.html"
         env:
+          GIT_COMMITTER_NAME: James
+          GIT_COMMITTER_EMAIL: joik1122@gmail.com
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
