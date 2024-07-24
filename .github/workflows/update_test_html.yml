@@ -36,3 +36,5 @@ jobs: # 작업을 정의
           author_email : "joik1122@gmail.com"
           message : "Update index.html with current time"
           add: "index.html" # 변경된 파일 추가
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }} # github token
