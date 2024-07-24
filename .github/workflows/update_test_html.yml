@@ -26,11 +26,11 @@ jobs:
         run: |
           python update_time.py
       - name: Commit updated index.html
-        run: |
-          git config --global user.name 'james'
-          git config --global user.email 'joik1122@gmail.com'
-          git add index.html
-          git commit -m "Update index.html with current time"
-          git push https://github.com/${{ secrets.GIT_TOKEN }}@github.com/joik1122/github-action-test.git
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: James # 사용자 이름
+          author_email: joik1122@gmail.com # 사용자 이메일
+          message: Update index.html with current time # 커밋 메시지
+          add: "index.html" # 변경된 파일 추가
         env:
-          GH_TOKEN: ${{ secrets.GIT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
